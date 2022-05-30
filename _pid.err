@@ -1,333 +1,0 @@
-                :-) GROMACS - gmx make_ndx, 2021.3-MODIFIED (-:
-
-                            GROMACS is written by:
-     Andrey Alekseenko              Emile Apol              Rossen Apostolov     
-         Paul Bauer           Herman J.C. Berendsen           Par Bjelkmar       
-       Christian Blau           Viacheslav Bolnykh             Kevin Boyd        
-     Aldert van Buuren           Rudi van Drunen             Anton Feenstra      
-    Gilles Gouaillardet             Alan Gray               Gerrit Groenhof      
-       Anca Hamuraru            Vincent Hindriksen          M. Eric Irrgang      
-      Aleksei Iupinov           Christoph Junghans             Joe Jordan        
-    Dimitrios Karkoulis            Peter Kasson                Jiri Kraus        
-      Carsten Kutzner              Per Larsson              Justin A. Lemkul     
-       Viveca Lindahl            Magnus Lundborg             Erik Marklund       
-        Pascal Merz             Pieter Meulenhoff            Teemu Murtola       
-        Szilard Pall               Sander Pronk              Roland Schulz       
-       Michael Shirts            Alexey Shvetsov             Alfons Sijbers      
-       Peter Tieleman              Jon Vincent              Teemu Virolainen     
-     Christian Wennberg            Maarten Wolf              Artem Zhmurov       
-                           and the project leaders:
-        Mark Abraham, Berk Hess, Erik Lindahl, and David van der Spoel
-
-Copyright (c) 1991-2000, University of Groningen, The Netherlands.
-Copyright (c) 2001-2019, The GROMACS development team at
-Uppsala University, Stockholm University and
-the Royal Institute of Technology, Sweden.
-check out http://www.gromacs.org for more information.
-
-GROMACS is free software; you can redistribute it and/or modify it
-under the terms of the GNU Lesser General Public License
-as published by the Free Software Foundation; either version 2.1
-of the License, or (at your option) any later version.
-
-GROMACS:      gmx make_ndx, version 2021.3-MODIFIED
-Executable:   /public/software/.local/easybuild/software/GROMACS/2021.3-foss-2021a-CUDA-11.3.1-PLUMED-2.7.2/bin/gmx
-Data prefix:  /public/software/.local/easybuild/software/GROMACS/2021.3-foss-2021a-CUDA-11.3.1-PLUMED-2.7.2
-Working dir:  /home/cloudam/e2
-Command line:
-  gmx make_ndx -f npt-nopr.tpr -n index.ndx -o _pid.ndx
-
-
-Reading structure file
-Reading file npt-nopr.tpr, VERSION 2021.5 (single precision)
-Reading file npt-nopr.tpr, VERSION 2021.5 (single precision)
-Warning: file does not end with a newline, last line:
- 
-
-GROMACS reminds you: "No great discovery was ever made without a bold guess." (Marie Curie)
-
-Going to read 1 old index file(s)
-
-  0 DNA                 :   870 atoms
-  1 ATP                 :    43 atoms
-
- nr : group      '!': not  'name' nr name   'splitch' nr    Enter: list groups
- 'a': atom       '&': and  'del' nr         'splitres' nr   'l': list residues
- 't': atom type  '|': or   'keep' nr        'splitat' nr    'h': help
- 'r': residue              'res' nr         'chain' char
- "name": group             'case': case sensitive           'q': save and quit
- 'ri': residue index
-
-> 
-Copied index group 0 'DNA'
-
-  2 DNA                 :   870 atoms
-
-> 
-Copied index group 1 'ATP'
-
-  3 ATP                 :    43 atoms
-
-> 
-Removed group 0 'DNA'
-Removed group 1 'ATP'
-
-> 
-Copied index group 0 'DNA'
-Copied index group 1 'ATP'
-Merged two groups with OR: 870 43 -> 913
-
-  2 DNA_ATP             :   913 atoms
-
-> 
-                 :-) GROMACS - gmx trjconv, 2021.3-MODIFIED (-:
-
-                            GROMACS is written by:
-     Andrey Alekseenko              Emile Apol              Rossen Apostolov     
-         Paul Bauer           Herman J.C. Berendsen           Par Bjelkmar       
-       Christian Blau           Viacheslav Bolnykh             Kevin Boyd        
-     Aldert van Buuren           Rudi van Drunen             Anton Feenstra      
-    Gilles Gouaillardet             Alan Gray               Gerrit Groenhof      
-       Anca Hamuraru            Vincent Hindriksen          M. Eric Irrgang      
-      Aleksei Iupinov           Christoph Junghans             Joe Jordan        
-    Dimitrios Karkoulis            Peter Kasson                Jiri Kraus        
-      Carsten Kutzner              Per Larsson              Justin A. Lemkul     
-       Viveca Lindahl            Magnus Lundborg             Erik Marklund       
-        Pascal Merz             Pieter Meulenhoff            Teemu Murtola       
-        Szilard Pall               Sander Pronk              Roland Schulz       
-       Michael Shirts            Alexey Shvetsov             Alfons Sijbers      
-       Peter Tieleman              Jon Vincent              Teemu Virolainen     
-     Christian Wennberg            Maarten Wolf              Artem Zhmurov       
-                           and the project leaders:
-        Mark Abraham, Berk Hess, Erik Lindahl, and David van der Spoel
-
-Copyright (c) 1991-2000, University of Groningen, The Netherlands.
-Copyright (c) 2001-2019, The GROMACS development team at
-Uppsala University, Stockholm University and
-the Royal Institute of Technology, Sweden.
-check out http://www.gromacs.org for more information.
-
-GROMACS is free software; you can redistribute it and/or modify it
-under the terms of the GNU Lesser General Public License
-as published by the Free Software Foundation; either version 2.1
-of the License, or (at your option) any later version.
-
-GROMACS:      gmx trjconv, version 2021.3-MODIFIED
-Executable:   /public/software/.local/easybuild/software/GROMACS/2021.3-foss-2021a-CUDA-11.3.1-PLUMED-2.7.2/bin/gmx
-Data prefix:  /public/software/.local/easybuild/software/GROMACS/2021.3-foss-2021a-CUDA-11.3.1-PLUMED-2.7.2
-Working dir:  /home/cloudam/e2
-Command line:
-  gmx trjconv -b 40000 -e 50000 -dt 1000 -s npt-nopr.tpr -n _pid.ndx -f npt-nopr.xtc -o _pid~trj_who.xtc -pbc whole
-
-Will write xtc: Compressed trajectory (portable xdr format): xtc
-Reading file npt-nopr.tpr, VERSION 2021.5 (single precision)
-Reading file npt-nopr.tpr, VERSION 2021.5 (single precision)
-Group     0 (            DNA) has   870 elements
-Group     1 (            ATP) has    43 elements
-Group     2 (        DNA_ATP) has   913 elements
-Select a group: Reading frame       0 time    0.000   Reading frame       0 time 40000.000   
-Precision of npt-nopr.xtc is 0.001 (nm)
-Using output precision of 0.001 (nm)
- ->  frame      0 time 40000.000      Reading frame       1 time 40010.000   Reading frame       2 time 40020.000   Reading frame       3 time 40030.000   Reading frame       4 time 40040.000   Reading frame       5 time 40050.000   Reading frame       6 time 40060.000   Reading frame       7 time 40070.000   Reading frame       8 time 40080.000   Reading frame       9 time 40090.000   Reading frame      10 time 40100.000   Reading frame      11 time 40110.000   Reading frame      12 time 40120.000   Reading frame      13 time 40130.000   Reading frame      14 time 40140.000   Reading frame      15 time 40150.000   Reading frame      16 time 40160.000   Reading frame      17 time 40170.000   Reading frame      18 time 40180.000   Reading frame      19 time 40190.000   Reading frame      20 time 40200.000   Reading frame      30 time 40300.000   Reading frame      40 time 40400.000   Reading frame      50 time 40500.000   Reading frame      60 time 40600.000   Reading frame      70 time 40700.000   Reading frame      80 time 40800.000   Reading frame      90 time 40900.000   Reading frame     100 time 41000.000    ->  frame      1 time 41000.000      Reading frame     110 time 41100.000   Reading frame     120 time 41200.000   Reading frame     130 time 41300.000   Reading frame     140 time 41400.000   Reading frame     150 time 41500.000   Reading frame     160 time 41600.000   Reading frame     170 time 41700.000   Reading frame     180 time 41800.000   Reading frame     190 time 41900.000   Reading frame     200 time 42000.000    ->  frame      2 time 42000.000      Reading frame     300 time 43000.000    ->  frame      3 time 43000.000      Reading frame     400 time 44000.000    ->  frame      4 time 44000.000      Reading frame     500 time 45000.000    ->  frame      5 time 45000.000      Reading frame     600 time 46000.000    ->  frame      6 time 46000.000      Reading frame     700 time 47000.000    ->  frame      7 time 47000.000      Reading frame     800 time 48000.000    ->  frame      8 time 48000.000      Reading frame     900 time 49000.000    ->  frame      9 time 49000.000      Reading frame    1000 time 50000.000    ->  frame     10 time 50000.000      Last frame       1000 time 50000.000   
-
-
-GROMACS reminds you: "Nurture Another Mind, Before Yours Expires" (Arrested Development)
-
-Note that major changes are planned in future for trjconv, to improve usability and utility.
-Select group for output
-Selected 2: 'DNA_ATP'
-                 :-) GROMACS - gmx trjconv, 2021.3-MODIFIED (-:
-
-                            GROMACS is written by:
-     Andrey Alekseenko              Emile Apol              Rossen Apostolov     
-         Paul Bauer           Herman J.C. Berendsen           Par Bjelkmar       
-       Christian Blau           Viacheslav Bolnykh             Kevin Boyd        
-     Aldert van Buuren           Rudi van Drunen             Anton Feenstra      
-    Gilles Gouaillardet             Alan Gray               Gerrit Groenhof      
-       Anca Hamuraru            Vincent Hindriksen          M. Eric Irrgang      
-      Aleksei Iupinov           Christoph Junghans             Joe Jordan        
-    Dimitrios Karkoulis            Peter Kasson                Jiri Kraus        
-      Carsten Kutzner              Per Larsson              Justin A. Lemkul     
-       Viveca Lindahl            Magnus Lundborg             Erik Marklund       
-        Pascal Merz             Pieter Meulenhoff            Teemu Murtola       
-        Szilard Pall               Sander Pronk              Roland Schulz       
-       Michael Shirts            Alexey Shvetsov             Alfons Sijbers      
-       Peter Tieleman              Jon Vincent              Teemu Virolainen     
-     Christian Wennberg            Maarten Wolf              Artem Zhmurov       
-                           and the project leaders:
-        Mark Abraham, Berk Hess, Erik Lindahl, and David van der Spoel
-
-Copyright (c) 1991-2000, University of Groningen, The Netherlands.
-Copyright (c) 2001-2019, The GROMACS development team at
-Uppsala University, Stockholm University and
-the Royal Institute of Technology, Sweden.
-check out http://www.gromacs.org for more information.
-
-GROMACS is free software; you can redistribute it and/or modify it
-under the terms of the GNU Lesser General Public License
-as published by the Free Software Foundation; either version 2.1
-of the License, or (at your option) any later version.
-
-GROMACS:      gmx trjconv, version 2021.3-MODIFIED
-Executable:   /public/software/.local/easybuild/software/GROMACS/2021.3-foss-2021a-CUDA-11.3.1-PLUMED-2.7.2/bin/gmx
-Data prefix:  /public/software/.local/easybuild/software/GROMACS/2021.3-foss-2021a-CUDA-11.3.1-PLUMED-2.7.2
-Working dir:  /home/cloudam/e2
-Command line:
-  gmx trjconv -b 40000 -e 50000 -dt 1000 -s npt-nopr.tpr -n _pid.ndx -f _pid~trj_who.xtc -o _pid~trj_cnt.xtc -pbc mol -center
-
-Will write xtc: Compressed trajectory (portable xdr format): xtc
-Reading file npt-nopr.tpr, VERSION 2021.5 (single precision)
-Reading file npt-nopr.tpr, VERSION 2021.5 (single precision)
-Group     0 (            DNA) has   870 elements
-Group     1 (            ATP) has    43 elements
-Group     2 (        DNA_ATP) has   913 elements
-Select a group: Group     0 (            DNA) has   870 elements
-Group     1 (            ATP) has    43 elements
-Group     2 (        DNA_ATP) has   913 elements
-Select a group: Reading frame       0 time 40000.000   
-Precision of _pid~trj_who.xtc is 0.001 (nm)
-Using output precision of 0.001 (nm)
- ->  frame      0 time 40000.000      Reading frame       1 time 41000.000    ->  frame      1 time 41000.000      Reading frame       2 time 42000.000    ->  frame      2 time 42000.000      Reading frame       3 time 43000.000    ->  frame      3 time 43000.000      Reading frame       4 time 44000.000    ->  frame      4 time 44000.000      Reading frame       5 time 45000.000    ->  frame      5 time 45000.000      Reading frame       6 time 46000.000    ->  frame      6 time 46000.000      Reading frame       7 time 47000.000    ->  frame      7 time 47000.000      Reading frame       8 time 48000.000    ->  frame      8 time 48000.000      Reading frame       9 time 49000.000    ->  frame      9 time 49000.000      Reading frame      10 time 50000.000    ->  frame     10 time 50000.000      Last frame         10 time 50000.000   
-
-
-GROMACS reminds you: "Nurture Another Mind, Before Yours Expires" (Arrested Development)
-
-Note that major changes are planned in future for trjconv, to improve usability and utility.
-Select group for centering
-Selected 1: 'ATP'
-Select group for output
-Selected 2: 'DNA_ATP'
-                 :-) GROMACS - gmx trjconv, 2021.3-MODIFIED (-:
-
-                            GROMACS is written by:
-     Andrey Alekseenko              Emile Apol              Rossen Apostolov     
-         Paul Bauer           Herman J.C. Berendsen           Par Bjelkmar       
-       Christian Blau           Viacheslav Bolnykh             Kevin Boyd        
-     Aldert van Buuren           Rudi van Drunen             Anton Feenstra      
-    Gilles Gouaillardet             Alan Gray               Gerrit Groenhof      
-       Anca Hamuraru            Vincent Hindriksen          M. Eric Irrgang      
-      Aleksei Iupinov           Christoph Junghans             Joe Jordan        
-    Dimitrios Karkoulis            Peter Kasson                Jiri Kraus        
-      Carsten Kutzner              Per Larsson              Justin A. Lemkul     
-       Viveca Lindahl            Magnus Lundborg             Erik Marklund       
-        Pascal Merz             Pieter Meulenhoff            Teemu Murtola       
-        Szilard Pall               Sander Pronk              Roland Schulz       
-       Michael Shirts            Alexey Shvetsov             Alfons Sijbers      
-       Peter Tieleman              Jon Vincent              Teemu Virolainen     
-     Christian Wennberg            Maarten Wolf              Artem Zhmurov       
-                           and the project leaders:
-        Mark Abraham, Berk Hess, Erik Lindahl, and David van der Spoel
-
-Copyright (c) 1991-2000, University of Groningen, The Netherlands.
-Copyright (c) 2001-2019, The GROMACS development team at
-Uppsala University, Stockholm University and
-the Royal Institute of Technology, Sweden.
-check out http://www.gromacs.org for more information.
-
-GROMACS is free software; you can redistribute it and/or modify it
-under the terms of the GNU Lesser General Public License
-as published by the Free Software Foundation; either version 2.1
-of the License, or (at your option) any later version.
-
-GROMACS:      gmx trjconv, version 2021.3-MODIFIED
-Executable:   /public/software/.local/easybuild/software/GROMACS/2021.3-foss-2021a-CUDA-11.3.1-PLUMED-2.7.2/bin/gmx
-Data prefix:  /public/software/.local/easybuild/software/GROMACS/2021.3-foss-2021a-CUDA-11.3.1-PLUMED-2.7.2
-Working dir:  /home/cloudam/e2
-Command line:
-  gmx trjconv -b 40000 -e 50000 -dt 1000 -s npt-nopr.tpr -n _pid.ndx -f _pid~trj_cnt.xtc -o _pid~trj_cls.xtc -pbc cluster
-
-Will write xtc: Compressed trajectory (portable xdr format): xtc
-Reading file npt-nopr.tpr, VERSION 2021.5 (single precision)
-Reading file npt-nopr.tpr, VERSION 2021.5 (single precision)
-Group     0 (            DNA) has   870 elements
-Group     1 (            ATP) has    43 elements
-Group     2 (        DNA_ATP) has   913 elements
-Select a group: Group     0 (            DNA) has   870 elements
-Group     1 (            ATP) has    43 elements
-Group     2 (        DNA_ATP) has   913 elements
-Select a group: Reading frame       0 time 40000.000   
-Precision of _pid~trj_cnt.xtc is 0.001 (nm)
-Using output precision of 0.001 (nm)
-Note that major changes are planned in future for trjconv, to improve usability and utility.
-Select group for clustering
-Selected 2: 'DNA_ATP'
-Select group for output
-Selected 2: 'DNA_ATP'
-Clustering iteration 2 of 2... ->  frame      0 time 40000.000      Reading frame       1 time 41000.000   
-Clustering iteration 2 of 2... ->  frame      1 time 41000.000      Reading frame       2 time 42000.000   
-Clustering iteration 2 of 2... ->  frame      2 time 42000.000      Reading frame       3 time 43000.000   
-Clustering iteration 2 of 2... ->  frame      3 time 43000.000      Reading frame       4 time 44000.000   
-Clustering iteration 2 of 2... ->  frame      4 time 44000.000      Reading frame       5 time 45000.000   
-Clustering iteration 2 of 2... ->  frame      5 time 45000.000      Reading frame       6 time 46000.000   
-Clustering iteration 2 of 2... ->  frame      6 time 46000.000      Reading frame       7 time 47000.000   
-Clustering iteration 2 of 2... ->  frame      7 time 47000.000      Reading frame       8 time 48000.000   
-Clustering iteration 2 of 2... ->  frame      8 time 48000.000      Reading frame       9 time 49000.000   
-Clustering iteration 2 of 2... ->  frame      9 time 49000.000      Reading frame      10 time 50000.000   
-Clustering iteration 2 of 2... ->  frame     10 time 50000.000      Last frame         10 time 50000.000   
-
-
-GROMACS reminds you: "Nurture Another Mind, Before Yours Expires" (Arrested Development)
-
-
-                 :-) GROMACS - gmx trjconv, 2021.3-MODIFIED (-:
-
-                            GROMACS is written by:
-     Andrey Alekseenko              Emile Apol              Rossen Apostolov     
-         Paul Bauer           Herman J.C. Berendsen           Par Bjelkmar       
-       Christian Blau           Viacheslav Bolnykh             Kevin Boyd        
-     Aldert van Buuren           Rudi van Drunen             Anton Feenstra      
-    Gilles Gouaillardet             Alan Gray               Gerrit Groenhof      
-       Anca Hamuraru            Vincent Hindriksen          M. Eric Irrgang      
-      Aleksei Iupinov           Christoph Junghans             Joe Jordan        
-    Dimitrios Karkoulis            Peter Kasson                Jiri Kraus        
-      Carsten Kutzner              Per Larsson              Justin A. Lemkul     
-       Viveca Lindahl            Magnus Lundborg             Erik Marklund       
-        Pascal Merz             Pieter Meulenhoff            Teemu Murtola       
-        Szilard Pall               Sander Pronk              Roland Schulz       
-       Michael Shirts            Alexey Shvetsov             Alfons Sijbers      
-       Peter Tieleman              Jon Vincent              Teemu Virolainen     
-     Christian Wennberg            Maarten Wolf              Artem Zhmurov       
-                           and the project leaders:
-        Mark Abraham, Berk Hess, Erik Lindahl, and David van der Spoel
-
-Copyright (c) 1991-2000, University of Groningen, The Netherlands.
-Copyright (c) 2001-2019, The GROMACS development team at
-Uppsala University, Stockholm University and
-the Royal Institute of Technology, Sweden.
-check out http://www.gromacs.org for more information.
-
-GROMACS is free software; you can redistribute it and/or modify it
-under the terms of the GNU Lesser General Public License
-as published by the Free Software Foundation; either version 2.1
-of the License, or (at your option) any later version.
-
-GROMACS:      gmx trjconv, version 2021.3-MODIFIED
-Executable:   /public/software/.local/easybuild/software/GROMACS/2021.3-foss-2021a-CUDA-11.3.1-PLUMED-2.7.2/bin/gmx
-Data prefix:  /public/software/.local/easybuild/software/GROMACS/2021.3-foss-2021a-CUDA-11.3.1-PLUMED-2.7.2
-Working dir:  /home/cloudam/e2
-Command line:
-  gmx trjconv -b 40000 -e 50000 -dt 1000 -s npt-nopr.tpr -n _pid.ndx -f _pid~trj_cls.xtc -o _pid.pdb -fit rot+trans
-
-Will write pdb: Protein data bank file
-Reading file npt-nopr.tpr, VERSION 2021.5 (single precision)
-Reading file npt-nopr.tpr, VERSION 2021.5 (single precision)
-Group     0 (            DNA) has   870 elements
-Group     1 (            ATP) has    43 elements
-Group     2 (        DNA_ATP) has   913 elements
-Select a group: Group     0 (            DNA) has   870 elements
-Group     1 (            ATP) has    43 elements
-Group     2 (        DNA_ATP) has   913 elements
-Select a group: Reading frame       0 time 40000.000   
-Precision of _pid~trj_cls.xtc is 0.001 (nm)
- ->  frame      0 time 40000.000      Reading frame       1 time 41000.000    ->  frame      1 time 41000.000      Reading frame       2 time 42000.000    ->  frame      2 time 42000.000      Reading frame       3 time 43000.000    ->  frame      3 time 43000.000      Reading frame       4 time 44000.000    ->  frame      4 time 44000.000      Reading frame       5 time 45000.000    ->  frame      5 time 45000.000      Reading frame       6 time 46000.000    ->  frame      6 time 46000.000      Reading frame       7 time 47000.000    ->  frame      7 time 47000.000      Reading frame       8 time 48000.000    ->  frame      8 time 48000.000      Reading frame       9 time 49000.000    ->  frame      9 time 49000.000      Reading frame      10 time 50000.000    ->  frame     10 time 50000.000      Last frame         10 time 50000.000   
-
-
-GROMACS reminds you: "Check Your Input" (D. Van Der Spoel)
-
-Note that major changes are planned in future for trjconv, to improve usability and utility.
-Select group for least squares fit
-Selected 1: 'ATP'
-Select group for output
-Selected 2: 'DNA_ATP'
-Reading file npt-nopr.tpr, VERSION 2021.5 (single precision)
-Reading file npt-nopr.tpr, VERSION 2021.5 (single precision)
