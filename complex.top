@@ -1,0 +1,80 @@
+;
+;	File 'ssDNA.top' was generated
+;	By user: cloudam (1003)
+;	On host: master
+;	At date: Mon Mar 20 15:32:20 2023
+;
+;	This is a standalone topology file
+;
+;	Created by:
+;	     :-) GROMACS - gmx pdb2gmx, 2023-dev-20220118-fbf723086e-unknown (-:
+;	
+;	Executable:   /public/software/.local/easybuild/software/GROMACS/gromacs-2021.5/gromacs-v2021.5/bin/gmx_mpi
+;	Data prefix:  /public/software/.local/easybuild/software/GROMACS/gromacs-2021.5/gromacs-v2021.5
+;	Working dir:  /home/cloudam/AMBER/01_test
+;	Command line:
+;	  gmx_mpi pdb2gmx -ignh -f ssDNA.pdb -o ssDNA.gro -p ssDNA.top
+;	Force field was read from the standard GROMACS share directory.
+;
+
+; Include forcefield parameters
+#include "amber14sb_OL15.ff/forcefield.itp"
+
+ [defaults ]
+; nbfunc        comb-rule       gen-pairs       fudgeLJ fudgeQQ
+;1               2               yes             0.5     0.8333
+
+[ atomtypes ]
+;name   bond_type     mass     charge   ptype   sigma         epsilon       Amb
+ p5       p5          0.00000  0.00000   A     3.74177e-01   8.36800e-01 ; 2.10  0.2000
+ o        o           0.00000  0.00000   A     2.95992e-01   8.78640e-01 ; 1.66  0.2100
+ c3       c3          0.00000  0.00000   A     3.39967e-01   4.57730e-01 ; 1.91  0.1094
+ os       os          0.00000  0.00000   A     3.00001e-01   7.11280e-01 ; 1.68  0.1700
+ oh       oh          0.00000  0.00000   A     3.06647e-01   8.80314e-01 ; 1.72  0.2104
+ nb       nb          0.00000  0.00000   A     3.25000e-01   7.11280e-01 ; 1.82  0.1700
+ ca       ca          0.00000  0.00000   A     3.39967e-01   3.59824e-01 ; 1.91  0.0860
+ nh       nh          0.00000  0.00000   A     3.25000e-01   7.11280e-01 ; 1.82  0.1700
+ nc       nc          0.00000  0.00000   A     3.25000e-01   7.11280e-01 ; 1.82  0.1700
+ cd       cd          0.00000  0.00000   A     3.39967e-01   3.59824e-01 ; 1.91  0.0860
+ na       na          0.00000  0.00000   A     3.25000e-01   7.11280e-01 ; 1.82  0.1700
+ hn       hn          0.00000  0.00000   A     1.06908e-01   6.56888e-02 ; 0.60  0.0157
+ ho       ho          0.00000  0.00000   A     0.00000e+00   0.00000e+00 ; 0.00  0.0000
+ h5       h5          0.00000  0.00000   A     2.42146e-01   6.27600e-02 ; 1.36  0.0150
+ h2       h2          0.00000  0.00000   A     2.29317e-01   6.56888e-02 ; 1.29  0.0157
+ h1       h1          0.00000  0.00000   A     2.47135e-01   6.56888e-02 ; 1.39  0.0157
+
+#include "ssDNA.itp"
+
+; Include Position restraint file
+#ifdef POSRES
+#include "posre.itp"
+#endif
+
+#include "ATP28.itp"
+#include "ATP29.itp"
+
+; Include water topology
+#include "amber14sb_OL15.ff/tip3p.itp"
+
+#ifdef POSRES_WATER
+; Position restraint for each water oxygen
+[ position_restraints ]
+;  i funct       fcx        fcy        fcz
+   1    1       1000       1000       1000
+#endif
+
+; Include topology for ions
+#include "amber14sb_OL15.ff/ions.itp"
+
+[ system ]
+; Name
+DNA
+
+[ molecules ]
+; Compound        #mols
+DNA_chain_A         1
+ATP28               1
+ATP29               1
+SOL         6175
+NA               48
+CL               18
