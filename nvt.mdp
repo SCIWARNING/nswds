@@ -1,0 +1,71 @@
+
+
+;#### neighbor list
+
+nstlist = 10
+
+
+
+;####  interaction setting
+
+cutoff-scheme = Verlet
+rlist = 1.0
+
+vdwtype = cutoff
+vdw-modifier = Potential-shift-Verlet
+rvdw = 1.0
+
+coulombtype = PME
+pme_order = 4
+rcoulomb = 1.0
+fourierspacing = 0.125
+
+DispCorr = EnerPres
+
+
+
+;####  constraint bond
+
+constraints = h-bonds
+continuation             = yes
+constraint-algorithm     = SHAKE
+
+;#### velocity generation
+
+;gen_vel  = yes
+;gen_temp = 298
+;gen_seed = 76376
+
+
+
+;#####   minimization/integration
+
+integrator               = md
+dt                       = 0.002
+nsteps                   = 250000
+
+
+tcoupl                   = nose-hoover
+nhchainlength = 1 
+tc-grps                  = DNA    non_DNA 
+tau-t                    = 0.5        0.5
+ref-t                    = 298        298
+
+
+
+;#####   restart should to change
+
+tinit = 2000
+
+
+
+
+;####  output
+
+nstlog                   = 5000
+nstenergy                = 5000
+
+nstxout = 20000
+nstxout-compressed    = 20000
+
+
