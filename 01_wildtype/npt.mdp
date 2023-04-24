@@ -1,0 +1,73 @@
+
+
+;#### neighbor list
+
+nstlist = 10
+
+
+
+;####  interaction setting
+
+cutoff-scheme = Verlet
+rlist = 1.0
+
+vdwtype = cutoff
+vdw-modifier = Potential-shift-Verlet
+rvdw = 1.0
+
+coulombtype = PME
+pme_order = 4
+rcoulomb = 1.0
+fourierspacing = 0.125
+
+DispCorr = EnerPres
+
+
+
+;####  constraint bond
+
+constraints = h-bonds
+continuation             = no
+constraint-algorithm     = lincs
+lincs_iter              = 1         ; accuracy of LINCS
+lincs_order             = 4         ; also related to accuracy
+
+;#### velocity generation
+
+gen_vel  = yes
+gen_temp = 298
+gen_seed = 973876
+
+
+
+;#####   minimization/integration
+
+integrator               = md
+dt                       = 0.002
+nsteps                   = 25000000
+
+
+tcoupl                   = nose-hoover
+nhchainlength = 1 
+tc-grps                  = DNA       nonDNA 
+tau-t                    = 0.5        0.5
+ref-t                    = 298        298
+
+
+pcoupl                   = Parrinello-Rahman
+tau-p                    = 2.0
+compressibility          = 4.5e-5
+ref-p                    = 1.0
+
+
+
+
+;####  output
+
+nstlog                   = 5000
+nstenergy                = 5000
+
+nstxout = 20000
+nstxout-compressed    = 20000
+
+
